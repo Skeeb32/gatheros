@@ -709,6 +709,16 @@ try {
   console.log(`\n${passed} PostgreSQL integration tests passed.`);
 } finally {
   await pool.end();
-  await admin.query(`drop database ${database} with (force)`);
+  // pg-pool may resolve end() before the server observes every socket close.
+  // Do not FORCE-terminate closing clients: that can emit an unhandled idle error.
+  for (let attempt = 0; ; attempt++) {
+    try {
+      await admin.query(`drop database ${database}`);
+      break;
+    } catch (error) {
+      if (error.code !== "55006" || attempt >= 9) throw error;
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+  }
   await admin.end();
 }
