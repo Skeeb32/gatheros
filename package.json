@@ -1,0 +1,25 @@
+{
+  "name": "gatheros",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @gatheros/web",
+    "build": "npm run build -w @gatheros/web",
+    "start": "npm run start -w @gatheros/web",
+    "typecheck": "npm run typecheck -w @gatheros/web",
+    "test": "npm run test -w @gatheros/web",
+    "test:db": "npm run test:db -w @gatheros/web",
+    "test:e2e": "npm run test:e2e -w @gatheros/web",
+    "format": "prettier --write apps/web packages/database docs README.md"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "devDependencies": {
+    "gifenc": "^1.0.3",
+    "pngjs": "^7.0.0"
+  }
+}

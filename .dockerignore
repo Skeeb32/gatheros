@@ -1,0 +1,9 @@
+**/node_modules
+**/.next
+**/.venv
+**/.gatheros
+**/.env*
+.git
+**/test-results
+**/__pycache__
+docs/assets

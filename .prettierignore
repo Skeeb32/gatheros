@@ -1,0 +1,7 @@
+**/node_modules
+**/.next
+**/.gatheros
+**/.venv
+**/test-results
+**/*.tsbuildinfo
+packages/database

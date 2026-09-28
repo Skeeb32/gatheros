@@ -1,0 +1,17 @@
+
+services:
+  web:
+    build: .
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      GATHEROS_DEMO: "true"
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+    volumes:
+      - demo-data:/app/apps/web/.gatheros
+  ai:
+    build: ./apps/ai-service
+    profiles: [ai]
+    ports: ["127.0.0.1:8000:8000"]
+    env_file: ./apps/ai-service/.env
+volumes:
+  demo-data:
