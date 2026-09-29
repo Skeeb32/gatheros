@@ -13,7 +13,7 @@
   <p><a href="#try-it-in-two-minutes">Run locally</a> · <a href="#see-the-product">Product tour</a> · <a href="docs/ENGINEERING.md">Engineering tour</a> · <a href="docs/SETUP.md">Connect services</a> · <a href="docs/VERIFICATION.md">Verification</a></p>
 </div>
 
-## See the product
+## See the product!
 
 **Actual application screenshots, backed by a seeded PostgreSQL database.** The local operations demo persists document uploads, inventory edits, email drafts, and waitlist registrations. It never simulates a successful payment or pretends to call an LLM.
 
